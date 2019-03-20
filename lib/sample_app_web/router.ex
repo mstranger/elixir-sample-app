@@ -18,6 +18,7 @@ defmodule SampleAppWeb.Router do
 
     # get "/", PageController, :index
     get "/", StaticPagesController, :home, as: :root
+    get "/signin", UsersController, :new
   end
 
   scope "/static_pages", SampleAppWeb do
@@ -26,6 +27,7 @@ defmodule SampleAppWeb.Router do
     get "/home", StaticPagesController, :home
     get "/help", StaticPagesController, :help
     get "/about", StaticPagesController, :about
+    get "/contact", StaticPagesController, :contact
   end
 
   # Other scopes may use custom stacks.

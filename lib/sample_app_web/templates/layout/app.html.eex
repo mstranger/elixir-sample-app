@@ -14,12 +14,35 @@
   <body>
     <div class="container">
 
+      <header class="navbar navbar-light bg-light">
+        <a href="/" id="logo" class="navbar-brand">Sample App</a>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link 'Home', to: '/static_pages/home' %></li>
+            <li><%= link 'Help', to: '/static_pages/help' %></li>
+            <li><%= link 'Log in', to: '#' %></li>
+          </ul>
+        </nav>
+      </header>
+
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
+
+      <hr>
+      <footer class="footer">
+        <small>Tutorial</small>
+        <nav>
+          <ul>
+            <li><%= link "About", to: '/static_pages/about' %></li>
+            <li><%= link "Contact", to: '/static_pages/contact' %></li>
+            <li><%= link "News", to: '#' %></li>
+          </ul>
+        </nav>
+      </footer>
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
